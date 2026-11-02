@@ -7,7 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 
 public class MainMenuScreen extends StackPane{
-    public MainMenuScreen(Runnable onPlay){
+    public MainMenuScreen(Runnable onPlay, Runnable onCredits, Runnable onRecords){
         Label title = new Label("DIVER");
         title.setStyle(
                 "-fx-font-size: 48px; -fx-text-fill: white;"
@@ -19,6 +19,9 @@ public class MainMenuScreen extends StackPane{
         Button exitButton = createButton("ВЫХОД");
 
         playButton.setOnAction(event -> onPlay.run());
+        creditsButton.setOnAction(event -> onCredits.run());
+        recordsButton.setOnAction(event -> onRecords.run());
+
 
         exitButton.setOnAction(event -> Platform.exit());
         VBox menu = new VBox(
