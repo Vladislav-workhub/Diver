@@ -1,13 +1,19 @@
 package ru.diver.screen;
+
 import javafx.application.Platform;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.Label;
-import javafx.scene.control.Button;
-import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 
+
+
 public class MainMenuScreen extends StackPane{
-    public MainMenuScreen(Runnable onPlay, Runnable onCredits, Runnable onRecords){
+
+    public MainMenuScreen(Runnable onPlay,
+                          Runnable onCredits,
+                          Runnable onRecords){
         Label title = new Label("DIVER");
         title.setStyle(
                 "-fx-font-size: 48px; -fx-text-fill: white;"
@@ -21,9 +27,8 @@ public class MainMenuScreen extends StackPane{
         playButton.setOnAction(event -> onPlay.run());
         creditsButton.setOnAction(event -> onCredits.run());
         recordsButton.setOnAction(event -> onRecords.run());
+        exitButton.setOnAction(event-> Platform.exit());
 
-
-        exitButton.setOnAction(event -> Platform.exit());
         VBox menu = new VBox(
                 16,
                 title,
@@ -39,7 +44,7 @@ public class MainMenuScreen extends StackPane{
         setStyle("-fx-background-color:#0c2438;");
     }
 
-    private Button createButton(String text){
+    private Button createButton (String text) {
         Button button = new Button(text);
         button.setPrefWidth(240);
         return button;

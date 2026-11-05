@@ -6,18 +6,20 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
-import java.awt.*;
 
 public class RecordsScreen extends StackPane {
-    public RecordsScreen (Runnable onBack){
+
+    public RecordsScreen (Runnable onBack) {
         Label title = new Label("Рекорды");
-        title.setStyle(
+        title.setStyle (
                 "-fx-font-size: 36px; -fx-text-fill: white;"
         );
 
-        Label decription = new Label ("Рекордов пока нет");
+        Label message = new Label(
+                "Рекордов пока нет"
+        );
 
-        decription.setStyle(
+        message.setStyle(
                 "-fx-font-size: 20px; -fx-text-fill: white;"
         );
 
@@ -28,14 +30,13 @@ public class RecordsScreen extends StackPane {
         VBox content = new VBox(
                 20,
                 title,
-                decription,
+                message,
                 backButton
         );
 
         content.setAlignment(Pos.CENTER);
         getChildren().add(content);
-        setStyle("-fx-background-color:#0c2438;");
 
-
+        setStyle("-fx-background-color: #0c2438;");
     }
 }

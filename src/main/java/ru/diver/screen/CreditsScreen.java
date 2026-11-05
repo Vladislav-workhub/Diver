@@ -6,16 +6,18 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
-import java.awt.*;
 
 public class CreditsScreen extends StackPane {
-    public CreditsScreen (Runnable onBack){
+
+    public CreditsScreen (Runnable onBack) {
         Label title = new Label("Создатели");
-        title.setStyle(
+        title.setStyle (
                 "-fx-font-size: 36px; -fx-text-fill: white;"
         );
 
-        Label decription = new Label ("Diver - учебный проект на Java(JavaFX)");
+        Label decription = new Label(
+                "Diver - учебный проект на Java(JavaFX)"
+        );
 
         decription.setStyle(
                 "-fx-font-size: 20px; -fx-text-fill: white;"
@@ -35,8 +37,6 @@ public class CreditsScreen extends StackPane {
         content.setAlignment(Pos.CENTER);
         getChildren().add(content);
 
-        setStyle("-fx-background-color:#0c2438;");
-
-
+        setStyle("-fx-background-color: #0c2438;");
     }
 }
