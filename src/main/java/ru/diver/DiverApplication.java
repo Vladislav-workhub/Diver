@@ -6,9 +6,9 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import ru.diver.screen.MainMenuScreen;
-import ru.diver.screen.GameScreen;
 import ru.diver.screen.CreditsScreen;
 import ru.diver.screen.RecordsScreen;
+import ru.diver.screen.GameScreen;
 
 public class DiverApplication extends Application{
 

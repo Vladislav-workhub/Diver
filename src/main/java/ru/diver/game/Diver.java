@@ -2,9 +2,9 @@ package ru.diver.game;
 
 public class Diver {
     public static final double WORLD_HEIGHT = 720.0; // Расчетная высота игрового мира;
-    public static final double HEIGHT = 216.0; // Высота ГГ.
+    public static final double HEIGHT = 200.0; // Высота ГГ.
 
-    private static final double GROUND_Y = 612.0; //Уровень дна
+    private static final double GROUND_Y = 670.0; //Уровень дна
     private static final double GRAVITY = 600.0;// Ускорение вниз
     private static final double SWIM_VELOCITY = -350.0;// Вертикальная скорость вверх
 
@@ -21,8 +21,9 @@ public class Diver {
 
         velocityY += GRAVITY * deltaTime;
 
-        if (y<0){
-            y=0;
+        // уровень моря 140
+        if (y<140){
+            y=140;
             velocityY= Math.max(0, velocityY);
         }
 
@@ -37,6 +38,11 @@ public class Diver {
     public double getY() {
         return y;
     }
+
+    public double getGroundY() {
+        return GROUND_Y;
+    }
+
     public boolean isOnGround(){
         return y >= GROUND_Y - HEIGHT && velocityY >=0;
     }

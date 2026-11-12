@@ -24,7 +24,7 @@ public class MainMenuScreen extends StackPane{
         Button creditsButton = createButton("СОЗДАТЕЛИ");
         Button exitButton = createButton("ВЫХОД");
 
-        playButton.setOnAction(event -> onPlay.run());
+        playButton.setOnAction(enent -> onPlay.run());
         creditsButton.setOnAction(event -> onCredits.run());
         recordsButton.setOnAction(event -> onRecords.run());
         exitButton.setOnAction(event-> Platform.exit());
